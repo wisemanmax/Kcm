@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kameron Catron-Mitchell | Financial Services Executive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a2540;
+            --accent: #00d4ff;
+            --coral: #F4A598;
+            --slate: #6B7280;
+            --gold: #d4af37;
+            --light: #f8f9fa;
+            --gray: #64748b;
+            --dark: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #0a2540 0%, #1e293b 100%);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* KCM Logo Recreation in CSS */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            position: relative;
+        }
+
+        .logo-shape {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .logo-triangle-1 {
+            border-width: 22px 0 0 22px;
+            border-color: transparent transparent transparent var(--coral);
+            top: 0;
+            left: 0;
+        }
+
+        .logo-triangle-2 {
+            border-width: 0 22px 22px 0;
+            border-color: transparent var(--slate) transparent transparent;
+            top: 0;
+            right: 0;
+        }
+
+        .logo-triangle-3 {
+            border-width: 0 0 22px 22px;
+            border-color: transparent transparent var(--coral) transparent;
+            bottom: 0;
+            left: 0;
+        }
+
+        .logo-triangle-4 {
+            border-width: 22px 22px 0 0;
+            border-color: var(--slate) transparent transparent transparent;
+            bottom: 0;
+            right: 0;
+        }
+
+        .logo-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--coral);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(244, 165, 152, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(244, 165, 152, 0.1);
+            border: 1px solid var(--coral);
+            border-radius: 50px;
+            color: var(--coral);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--coral) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: var(--gray);
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--coral);
+            color: white;
+            box-shadow: 0 4px 20px rgba(244, 165, 152, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(244, 165, 152, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 2px solid var(--coral);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(244, 165, 152, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-label {
+            color: var(--coral);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(244, 165, 152, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--coral);
+        }
+
+        .stat-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--coral);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        .experience-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.4s;
+            backdrop-filter: blur(10px);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--coral);
+            box-shadow: 0 20px 40px rgba(244, 165, 152, 0.1);
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, var(--coral) 0%, var(--gold) 100%);
+            border-radius: 4px;
+            transition: height 0.4s;
+        }
+
+        .experience-card:hover::before {
+            height: 100%;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .exp-company {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .exp-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--light);
+        }
+
+        .exp-company-name {
+            color: var(--coral);
+            font-weight: 600;
+        }
+
+        .exp-duration {
+            color: var(--gray);
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            background: rgba(244, 165, 152, 0.05);
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .exp-description {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.4s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .edu-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .edu-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .edu-school {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .edu-degree {
+            color: var(--coral);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-year {
+            color: var(--gray);
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-highlights {
+            list-style: none;
+        }
+
+        .edu-highlights li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+            color: var(--gray);
+        }
+
+        .edu-highlights li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.4s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: var(--coral);
+            box-shadow: 0 20px 40px rgba(244, 165, 152, 0.1);
+        }
+
+        .skill-category-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--coral) 0%, var(--slate) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-category-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-item {
+            padding: 0.5rem 1rem;
+            background: rgba(244, 165, 152, 0.1);
+            border: 1px solid rgba(244, 165, 152, 0.3);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: var(--coral);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(244, 165, 152, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .contact-link:hover {
+            border-color: var(--coral);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 165, 152, 0.2);
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Certifications */
+        .cert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .cert-badge-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .cert-badge-text {
+            text-align: left;
+        }
+
+        .cert-badge-title {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 0.875rem;
+        }
+
+        .cert-badge-org {
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .exp-header {
+                flex-direction: column;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-link {
+                width: 100%;
+            }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <div class="logo-shape logo-triangle-1"></div>
+                    <div class="logo-shape logo-triangle-2"></div>
+                    <div class="logo-shape logo-triangle-3"></div>
+                    <div class="logo-shape logo-triangle-4"></div>
+                </div>
+                <div class="logo-text">KCM</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Financial Services Leader</div>
+            <h1>Kameron<br>Catron-Mitchell</h1>
+            <p class="hero-subtitle">Results-Driven Financial Professional specializing in Regulatory Relations, Loss Mitigation, and Business Operations Excellence. Transforming complex challenges into strategic opportunities at Wells Fargo.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#experience" class="btn btn-secondary">View Experience</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Professional Connections</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Fortune 500 Companies</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Industry Certification</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Career Journey</div>
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-description">A proven track record of driving operational excellence, strategic planning, and regulatory compliance across leading financial institutions.</p>
+            </div>
+
+            <div class="experience-grid">
+                <div class="experience-card reveal">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="https://logo.clearbit.com/wellsfargo.com" alt="Wells Fargo" onerror="this.parentElement.innerHTML='<div style=\'color:#D71E28;font-weight:700;font-size:1.5rem;\'>WF</div>'">
+                            </div>
+                            <div>
+                                <h3 class="exp-title">Lead Business Execution Consultant, Vice President</h3>
+                                <p class="exp-company-name">Wells Fargo</p>
+                            </div>
+                        </div>
+                        <div class="exp-duration">Sep 2023 - Present · 2 yrs 4 mos</div>
+                    </div>
+                    <p class="exp-description">Leading cross-functional teams to strategize, plan, and execute a variety of programs, services, and initiatives. Driving operational excellence and stakeholder engagement in the Greater Philadelphia area with focus on relationship management and strategic decision-making.</p>
+                    <div class="exp-skills">
+                        <span class="skill-tag">Relationship Management</span>
+                        <span class="skill-tag">Decision-Making</span>
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">Operations Management</span>
+                        <span class="skill-tag">Cross-Functional Leadership</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="https://logo.clearbit.com/wellsfargo.com" alt="Wells Fargo" onerror="this.parentElement.innerHTML='<div style=\'color:#D71E28;font-weight:700;font-size:1.5rem;\'>WF</div>'">
+                            </div>
+                            <div>
+                                <h3 class="exp-title">Lead Regulatory Relations Specialist</h3>
+                                <p class="exp-company-name">Wells Fargo</p>
+                            </div>
+                        </div>
+                        <div class="exp-duration">Nov 2022 - Sep 2023 · 11 mos</div>
+                    </div>
+                    <p class="exp-description">Specialized in regulatory compliance, strategic initiatives, and tactical planning for one of the nation's largest financial institutions. Managed complex regulatory relationships and ensured organizational adherence to evolving compliance requirements.</p>
+                    <div class="exp-skills">
+                        <span class="skill-tag">Strategic Initiatives</span>
+                        <span class="skill-tag">Tactical Plans</span>
+                        <span class="skill-tag">Regulatory Compliance</span>
+                        <span class="skill-tag">Risk Mitigation</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="https://logo.clearbit.com/collegeavestudentloans.com" alt="College Ave" onerror="this.parentElement.innerHTML='<div style=\'color:#00A7E1;font-weight:700;font-size:1.25rem;\'>CA</div>'">
+                            </div>
+                            <div>
+                                <h3 class="exp-title">Director of Collections and Recovery Operations</h3>
+                                <p class="exp-company-name">College Ave Student Loans</p>
+                            </div>
+                        </div>
+                        <div class="exp-duration">Aug 2020 - Nov 2022 · 2 yrs 4 mos</div>
+                    </div>
+                    <p class="exp-description">Built the collections and recovery function from the ground up, developing end-to-end processes and implementing strategic frameworks. Led operational excellence initiatives that transformed departmental performance while maintaining compliance with industry regulations.</p>
+                    <div class="exp-skills">
+                        <span class="skill-tag">Operations Management</span>
+                        <span class="skill-tag">Business Process</span>
+                        <span class="skill-tag">Vendor Management</span>
+                        <span class="skill-tag">Risk Management</span>
+                        <span class="skill-tag">Team Building</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="https://logo.clearbit.com/salliemae.com" alt="Sallie Mae" onerror="this.parentElement.innerHTML='<div style=\'color:#00457C;font-weight:700;font-size:1.25rem;\'>SM</div>'">
+                            </div>
+                            <div>
+                                <h3 class="exp-title">Personal Loan Operations Manager</h3>
+                                <p class="exp-company-name">Sallie Mae</p>
+                            </div>
+                        </div>
+                        <div class="exp-duration">Aug 2018 - Jan 2020 · 1 yr 6 mos</div>
+                    </div>
+                    <p class="exp-description">Managed personal loan operations with focus on loan origination, credit analysis, and change management. Delivered results through business analytics and conflict resolution while maintaining high standards of customer service and operational efficiency.</p>
+                    <div class="exp-skills">
+                        <span class="skill-tag">Loan Origination</span>
+                        <span class="skill-tag">Business Analysis</span>
+                        <span class="skill-tag">Credit Analysis</span>
+                        <span class="skill-tag">Change Management</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="https://logo.clearbit.com/salliemae.com" alt="Sallie Mae" onerror="this.parentElement.innerHTML='<div style=\'color:#00457C;font-weight:700;font-size:1.25rem;\'>SM</div>'">
+                            </div>
+                            <div>
+                                <h3 class="exp-title">Unit Collections Manager</h3>
+                                <p class="exp-company-name">Sallie Mae</p>
+                            </div>
+                        </div>
+                        <div class="exp-duration">Jan 2015 - Jul 2018 · 3 yrs 7 mos</div>
+                    </div>
+                    <p class="exp-description">Managed collections operations with emphasis on team development, performance optimization, and strategic communication initiatives. Built high-performing teams that consistently exceeded collection targets while maintaining regulatory compliance.</p>
+                    <div class="exp-skills">
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Performance Management</span>
+                        <span class="skill-tag">Collections Strategy</span>
+                        <span class="skill-tag">Compliance</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="https://logo.clearbit.com/tiaa.org" alt="TIAA-CREF" onerror="this.parentElement.innerHTML='<div style=\'color:#003B5C;font-weight:700;font-size:1.25rem;\'>TC</div>'">
+                            </div>
+                            <div>
+                                <h3 class="exp-title">Investment Services</h3>
+                                <p class="exp-company-name">TIAA-CREF</p>
+                            </div>
+                        </div>
+                        <div class="exp-duration">May 2014 - Jan 2015 · 9 mos</div>
+                    </div>
+                    <p class="exp-description">Provided investment services support with focus on requirements gathering and system implementation using Oracle Flexcube. Supported financial planning initiatives and client relationship management.</p>
+                    <div class="exp-skills">
+                        <span class="skill-tag">Requirements Gathering</span>
+                        <span class="skill-tag">Oracle Flexcube</span>
+                        <span class="skill-tag">Investment Services</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="https://logo.clearbit.com/salliemae.com" alt="Sallie Mae" onerror="this.parentElement.innerHTML='<div style=\'color:#00457C;font-weight:700;font-size:1.25rem;\'>SM</div>'">
+                            </div>
+                            <div>
+                                <h3 class="exp-title">Collector</h3>
+                                <p class="exp-company-name">Sallie Mae</p>
+                            </div>
+                        </div>
+                        <div class="exp-duration">Oct 2012 - Apr 2014 · 1 yr 7 mos</div>
+                    </div>
+                    <p class="exp-description">Managed collection activities for student loan portfolios while developing foundational skills in financial services, customer communication, and problem resolution.</p>
+                    <div class="exp-skills">
+                        <span class="skill-tag">Collections</span>
+                        <span class="skill-tag">Customer Service</span>
+                        <span class="skill-tag">Problem Resolution</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="https://logo.clearbit.com/bankofamerica.com" alt="Bank of America" onerror="this.parentElement.innerHTML='<div style=\'color:#E31837;font-weight:700;font-size:1.25rem;\'>BA</div>'">
+                            </div>
+                            <div>
+                                <h3 class="exp-title">Team Lead</h3>
+                                <p class="exp-company-name">Bank of America</p>
+                            </div>
+                        </div>
+                        <div class="exp-duration">Nov 2010 - Sep 2012 · 1 yr 11 mos</div>
+                    </div>
+                    <p class="exp-description">Supervised operations team and managed customer service initiatives at one of the world's largest banking institutions. Developed early leadership skills and operational expertise.</p>
+                    <div class="exp-skills">
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Operations</span>
+                        <span class="skill-tag">Customer Service</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="https://logo.clearbit.com/louviersfcu.org" alt="Louviers FCU" onerror="this.parentElement.innerHTML='<div style=\'color:#2563EB;font-weight:700;font-size:1.25rem;\'>LF</div>'">
+                            </div>
+                            <div>
+                                <h3 class="exp-title">Project Intern</h3>
+                                <p class="exp-company-name">Louviers Federal Credit Union</p>
+                            </div>
+                        </div>
+                        <div class="exp-duration">Aug 2009 - Jun 2010 · 11 mos</div>
+                    </div>
+                    <p class="exp-description">Gained foundational experience in financial services operations and project support within a community-focused credit union environment.</p>
+                    <div class="exp-skills">
+                        <span class="skill-tag">Project Support</span>
+                        <span class="skill-tag">Financial Services</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certification -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <div class="cert-badge">
+                    <div class="cert-badge-icon">✓</div>
+                    <div class="cert-badge-text">
+                        <div class="cert-badge-title">Certified Regulatory Vendor Program Manager</div>
+                        <div class="cert-badge-org">Compliance Education Institute, LLC · Oct 2021 - Oct 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Academic Background</div>
+                <h2 class="section-title">Education</h2>
+                <p class="section-description">Strong foundation in finance, business administration, and leadership development from respected Delaware institutions.</p>
+            </div>
+
+            <div class="education-grid">
+                <div class="education-card reveal">
+                    <div class="edu-logo">
+                        <img src="https://logo.clearbit.com/desu.edu" alt="Delaware State University" onerror="this.parentElement.innerHTML='<div style=\'color:#C8102E;font-weight:700;font-size:1.25rem;\'>DSU</div>'">
+                    </div>
+                    <h3 class="edu-school">Delaware State University</h3>
+                    <p class="edu-degree">BS, Banking, Corporate, Finance, and Securities Law</p>
+                    <p class="edu-year">2011 - 2014</p>
+                    <ul class="edu-highlights">
+                        <li>Investment Club Member</li>
+                        <li>Accounting and Finance Club</li>
+                        <li>Founder of HMF (Student Managed Portfolio)</li>
+                        <li>OFC Business Plan Competition</li>
+                        <li>CFA Research Challenge</li>
+                        <li>Climate Change Symposium</li>
+                        <li>FPA Experience</li>
+                    </ul>
+                </div>
+
+                <div class="education-card reveal">
+                    <div class="edu-logo">
+                        <img src="https://logo.clearbit.com/udel.edu" alt="University of Delaware" onerror="this.parentElement.innerHTML='<div style=\'color:#00539B;font-weight:700;font-size:1.25rem;\'>UD</div>'">
+                    </div>
+                    <h3 class="edu-school">University of Delaware</h3>
+                    <p class="edu-degree">Bachelor of Business Administration - BBA, Finance, General</p>
+                    <p class="edu-year">2010 - 2011</p>
+                    <ul class="edu-highlights">
+                        <li>Focused on Financial Services</li>
+                        <li>Business Administration Core</li>
+                        <li>Finance Specialization</li>
+                        <li>Foundation in Corporate Finance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Core Competencies</div>
+                <h2 class="section-title">Professional Skills</h2>
+                <p class="section-description">A comprehensive skillset spanning business operations, regulatory compliance, financial analysis, and strategic leadership.</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">📊</div>
+                    <h3 class="skill-category-title">Business Operations</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Operations Management</span>
+                        <span class="skill-item">Business Process</span>
+                        <span class="skill-item">Strategic Planning</span>
+                        <span class="skill-item">Project Management</span>
+                        <span class="skill-item">Process Improvement</span>
+                        <span class="skill-item">Change Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">⚖️</div>
+                    <h3 class="skill-category-title">Regulatory & Compliance</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Regulatory Relations</span>
+                        <span class="skill-item">Compliance Management</span>
+                        <span class="skill-item">Risk Management</span>
+                        <span class="skill-item">Loss Mitigation</span>
+                        <span class="skill-item">Policy Development</span>
+                        <span class="skill-item">Audit Preparation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">💰</div>
+                    <h3 class="skill-category-title">Financial Services</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Loan Origination</span>
+                        <span class="skill-item">Credit Analysis</span>
+                        <span class="skill-item">Collections Management</span>
+                        <span class="skill-item">Portfolio Management</span>
+                        <span class="skill-item">Business Analytics</span>
+                        <span class="skill-item">Financial Planning</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">👥</div>
+                    <h3 class="skill-category-title">Leadership & Management</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Team Leadership</span>
+                        <span class="skill-item">Staff Development</span>
+                        <span class="skill-item">Performance Management</span>
+                        <span class="skill-item">Stakeholder Engagement</span>
+                        <span class="skill-item">Conflict Resolution</span>
+                        <span class="skill-item">Mentoring</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">🤝</div>
+                    <h3 class="skill-category-title">Vendor & Relationship Management</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Vendor Management</span>
+                        <span class="skill-item">Third-Party Oversight</span>
+                        <span class="skill-item">Contract Negotiation</span>
+                        <span class="skill-item">Relationship Building</span>
+                        <span class="skill-item">Partnership Development</span>
+                        <span class="skill-item">SLA Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">📈</div>
+                    <h3 class="skill-category-title">Strategy & Analysis</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Strategic Initiatives</span>
+                        <span class="skill-item">Data Analysis</span>
+                        <span class="skill-item">KPI Development</span>
+                        <span class="skill-item">Business Intelligence</span>
+                        <span class="skill-item">Decision-Making</span>
+                        <span class="skill-item">Tactical Planning</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">💬</div>
+                    <h3 class="skill-category-title">Communication & Influence</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Oral Communication</span>
+                        <span class="skill-item">Executive Presentations</span>
+                        <span class="skill-item">Written Communication</span>
+                        <span class="skill-item">Stakeholder Management</span>
+                        <span class="skill-item">Cross-Functional Collaboration</span>
+                        <span class="skill-item">Negotiation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">🛠️</div>
+                    <h3 class="skill-category-title">Technical & Systems</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Requirements Gathering</span>
+                        <span class="skill-item">Oracle Flexcube</span>
+                        <span class="skill-item">Business Systems</span>
+                        <span class="skill-item">Portfolio Optimization</span>
+                        <span class="skill-item">Product Management</span>
+                        <span class="skill-item">Process Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="section-label">Let's Connect</div>
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-description">Interested in discussing financial services, regulatory compliance, or business operations? I'm always open to connecting with industry professionals and exploring new opportunities.</p>
+                
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/kameron-catron-mitchell" target="_blank" class="contact-link">
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        LinkedIn Profile
+                    </a>
+                    <a href="mailto:contact@kameronmitchell.com" class="contact-link">
+                        <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Email Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Kameron Catron-Mitchell. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem;">Charlotte Metro | Greater Philadelphia</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function checkReveal() {
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 100;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        checkReveal(); // Check on load
+
+        // Add active state to navigation on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = 'var(--light)';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = 'var(--coral)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
