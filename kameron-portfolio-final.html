@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kameron Catron-Mitchell is a financial services executive specializing in regulatory relations, loss mitigation, and operational excellence across enterprise financial institutions.">
+    <meta name="theme-color" content="#0a2540">
+    <meta property="og:title" content="Kameron Catron-Mitchell | Financial Services Executive">
+    <meta property="og:description" content="Results-driven financial services leader specializing in regulatory relations, loss mitigation, and operational excellence.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kameron Catron-Mitchell | Financial Services Executive">
+    <meta name="twitter:description" content="Results-driven financial services leader specializing in regulatory relations, loss mitigation, and operational excellence.">
     <title>Kameron Catron-Mitchell | Financial Services Executive</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -28,6 +37,29 @@
             background: linear-gradient(135deg, #0a2540 0%, #1e293b 100%);
             color: var(--light);
             overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid rgba(244, 165, 152, 0.8);
+            outline-offset: 3px;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: 0;
+            background: var(--coral);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            z-index: 2000;
+        }
+
+        .skip-link:focus {
+            left: 1rem;
+            top: 1rem;
         }
 
         /* Navigation */
@@ -235,6 +267,36 @@
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
+        .hero-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .hero-highlight-card {
+            padding: 1.25rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .hero-highlight-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--coral);
+        }
+
+        .hero-highlight-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-highlight-text {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
         .btn {
             padding: 1rem 2.5rem;
             border-radius: 8px;
@@ -348,6 +410,110 @@
             color: var(--gray);
             font-size: 1rem;
             font-weight: 500;
+        }
+
+        /* Value Proposition */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+            box-shadow: 0 18px 36px rgba(212, 175, 55, 0.1);
+        }
+
+        .value-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: rgba(244, 165, 152, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .value-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-text {
+            color: var(--gray);
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .impact-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--coral);
+            box-shadow: 0 18px 36px rgba(244, 165, 152, 0.15);
+        }
+
+        .impact-title {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .impact-list {
+            list-style: none;
+        }
+
+        .impact-list li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+            color: var(--gray);
+        }
+
+        .impact-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--coral);
+            font-weight: 700;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .pill {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--light);
+            font-size: 0.875rem;
+            background: rgba(255, 255, 255, 0.04);
         }
 
         /* Experience Timeline */
@@ -646,6 +812,18 @@
             height: 24px;
         }
 
+        .availability-card {
+            margin-top: 2.5rem;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .availability-card strong {
+            color: var(--coral);
+        }
+
         /* Footer */
         footer {
             padding: 3rem 2rem;
@@ -733,6 +911,13 @@
             }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
         /* Scroll Reveal Animation */
         .reveal {
             opacity: 0;
@@ -747,6 +932,7 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- Navigation -->
     <nav>
         <div class="nav-content">
@@ -760,6 +946,8 @@
                 <div class="logo-text">KCM</div>
             </div>
             <ul class="nav-links">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#impact">Impact</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -768,15 +956,30 @@
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">Financial Services Leader</div>
             <h1>Kameron<br>Catron-Mitchell</h1>
-            <p class="hero-subtitle">Results-Driven Financial Professional specializing in Regulatory Relations, Loss Mitigation, and Business Operations Excellence. Transforming complex challenges into strategic opportunities at Wells Fargo.</p>
+            <p class="hero-subtitle">Results-driven financial professional specializing in regulatory relations, loss mitigation, and operational excellence. Trusted advisor to enterprise leaders, translating complex risk and compliance requirements into executable, scalable business outcomes.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Get in Touch</a>
                 <a href="#experience" class="btn btn-secondary">View Experience</a>
+            </div>
+            <div class="hero-highlights">
+                <div class="hero-highlight-card">
+                    <div class="hero-highlight-title">Executive Partnership</div>
+                    <p class="hero-highlight-text">Aligns business, risk, and regulatory priorities for leadership teams and enterprise stakeholders.</p>
+                </div>
+                <div class="hero-highlight-card">
+                    <div class="hero-highlight-title">Operational Transformation</div>
+                    <p class="hero-highlight-text">Builds governance, controls, and scalable processes that improve performance and resilience.</p>
+                </div>
+                <div class="hero-highlight-card">
+                    <div class="hero-highlight-title">Cross-Functional Leadership</div>
+                    <p class="hero-highlight-text">Leads high-impact initiatives across compliance, operations, and customer experience.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -787,20 +990,96 @@
             <div class="stats-grid">
                 <div class="stat-card reveal">
                     <div class="stat-number">10+</div>
-                    <div class="stat-label">Years of Experience</div>
+                    <div class="stat-label">Years in Financial Services</div>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-number">500+</div>
-                    <div class="stat-label">Professional Connections</div>
+                    <div class="stat-label">Enterprise Stakeholders Engaged</div>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-number">3</div>
-                    <div class="stat-label">Fortune 500 Companies</div>
+                    <div class="stat-label">Fortune 500 Institutions</div>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-number">1</div>
                     <div class="stat-label">Industry Certification</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Professional Profile</div>
+                <h2 class="section-title">Strategic Leadership for Regulated Environments</h2>
+                <p class="section-description">Experienced in steering enterprise programs, regulatory readiness, and operational performance. Known for thoughtful governance, disciplined execution, and collaboration across risk, compliance, and business teams.</p>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon">🧭</div>
+                    <h3 class="value-title">Regulatory Readiness</h3>
+                    <p class="value-text">Designs oversight frameworks, governance routines, and documentation standards that align with supervisory expectations and internal risk appetite.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">⚙️</div>
+                    <h3 class="value-title">Operational Excellence</h3>
+                    <p class="value-text">Builds scalable processes, KPI dashboards, and quality controls that elevate service delivery, reduce friction, and improve performance.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title">Stakeholder Leadership</h3>
+                    <p class="value-text">Bridges executive priorities with frontline execution, partnering with cross-functional leaders to drive enterprise-wide alignment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Business Impact</div>
+                <h2 class="section-title">Enterprise Outcomes Delivered</h2>
+                <p class="section-description">Focused on measurable outcomes that strengthen governance, mitigate risk, and accelerate delivery for large-scale financial services organizations.</p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card reveal">
+                    <div class="impact-title">Program Governance</div>
+                    <ul class="impact-list">
+                        <li>Established enterprise cadence for program tracking, executive communications, and stakeholder decision-making.</li>
+                        <li>Built documentation standards to improve audit readiness and regulatory visibility.</li>
+                        <li>Standardized risk assessments and control validation workflows.</li>
+                    </ul>
+                </div>
+                <div class="impact-card reveal">
+                    <div class="impact-title">Operational Performance</div>
+                    <ul class="impact-list">
+                        <li>Introduced KPI and SLA frameworks for third-party oversight and internal performance reviews.</li>
+                        <li>Optimized workflows to reduce friction across servicing, recovery, and compliance teams.</li>
+                        <li>Led change management to support new policy and process rollouts.</li>
+                    </ul>
+                </div>
+                <div class="impact-card reveal">
+                    <div class="impact-title">Leadership & Talent</div>
+                    <ul class="impact-list">
+                        <li>Built and scaled high-performing teams through coaching, training, and succession planning.</li>
+                        <li>Partnered with executive leaders to define strategy and prioritize initiatives.</li>
+                        <li>Developed cross-functional collaboration models for shared accountability.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pill-row">
+                <span class="pill">Regulatory Affairs</span>
+                <span class="pill">Loss Mitigation</span>
+                <span class="pill">Third-Party Risk</span>
+                <span class="pill">Operational Resilience</span>
+                <span class="pill">Customer Experience</span>
+                <span class="pill">Portfolio Health</span>
             </div>
         </div>
     </section>
@@ -828,7 +1107,7 @@
                         </div>
                         <div class="exp-duration">Sep 2023 - Present · 2 yrs 4 mos</div>
                     </div>
-                    <p class="exp-description">Leading cross-functional teams to strategize, plan, and execute a variety of programs, services, and initiatives. Driving operational excellence and stakeholder engagement in the Greater Philadelphia area with focus on relationship management and strategic decision-making.</p>
+                    <p class="exp-description">Lead cross-functional teams to strategize, plan, and execute enterprise programs. Drive operational excellence and stakeholder engagement with a focus on relationship management, regulatory alignment, and strategic decision-making.</p>
                     <div class="exp-skills">
                         <span class="skill-tag">Relationship Management</span>
                         <span class="skill-tag">Decision-Making</span>
@@ -851,7 +1130,7 @@
                         </div>
                         <div class="exp-duration">Nov 2022 - Sep 2023 · 11 mos</div>
                     </div>
-                    <p class="exp-description">Specialized in regulatory compliance, strategic initiatives, and tactical planning for one of the nation's largest financial institutions. Managed complex regulatory relationships and ensured organizational adherence to evolving compliance requirements.</p>
+                    <p class="exp-description">Specialized in regulatory compliance, strategic initiatives, and tactical planning for a national financial institution. Managed complex regulatory relationships and ensured organizational adherence to evolving requirements.</p>
                     <div class="exp-skills">
                         <span class="skill-tag">Strategic Initiatives</span>
                         <span class="skill-tag">Tactical Plans</span>
@@ -873,7 +1152,7 @@
                         </div>
                         <div class="exp-duration">Aug 2020 - Nov 2022 · 2 yrs 4 mos</div>
                     </div>
-                    <p class="exp-description">Built the collections and recovery function from the ground up, developing end-to-end processes and implementing strategic frameworks. Led operational excellence initiatives that transformed departmental performance while maintaining compliance with industry regulations.</p>
+                    <p class="exp-description">Built the collections and recovery function from the ground up, developing end-to-end processes and strategic frameworks. Led operational excellence initiatives that transformed departmental performance while maintaining compliance with industry regulations.</p>
                     <div class="exp-skills">
                         <span class="skill-tag">Operations Management</span>
                         <span class="skill-tag">Business Process</span>
@@ -896,7 +1175,7 @@
                         </div>
                         <div class="exp-duration">Aug 2018 - Jan 2020 · 1 yr 6 mos</div>
                     </div>
-                    <p class="exp-description">Managed personal loan operations with focus on loan origination, credit analysis, and change management. Delivered results through business analytics and conflict resolution while maintaining high standards of customer service and operational efficiency.</p>
+                    <p class="exp-description">Managed personal loan operations with focus on loan origination, credit analysis, and change management. Delivered results through business analytics while maintaining high standards of customer service and operational efficiency.</p>
                     <div class="exp-skills">
                         <span class="skill-tag">Loan Origination</span>
                         <span class="skill-tag">Business Analysis</span>
@@ -918,7 +1197,7 @@
                         </div>
                         <div class="exp-duration">Jan 2015 - Jul 2018 · 3 yrs 7 mos</div>
                     </div>
-                    <p class="exp-description">Managed collections operations with emphasis on team development, performance optimization, and strategic communication initiatives. Built high-performing teams that consistently exceeded collection targets while maintaining regulatory compliance.</p>
+                    <p class="exp-description">Managed collections operations with emphasis on team development, performance optimization, and strategic communication. Built high-performing teams that consistently exceeded targets while maintaining regulatory compliance.</p>
                     <div class="exp-skills">
                         <span class="skill-tag">Team Leadership</span>
                         <span class="skill-tag">Performance Management</span>
@@ -961,7 +1240,7 @@
                         </div>
                         <div class="exp-duration">Oct 2012 - Apr 2014 · 1 yr 7 mos</div>
                     </div>
-                    <p class="exp-description">Managed collection activities for student loan portfolios while developing foundational skills in financial services, customer communication, and problem resolution.</p>
+                    <p class="exp-description">Managed collection activities for student loan portfolios while building foundational skills in financial services, customer communication, and problem resolution.</p>
                     <div class="exp-skills">
                         <span class="skill-tag">Collections</span>
                         <span class="skill-tag">Customer Service</span>
@@ -982,7 +1261,7 @@
                         </div>
                         <div class="exp-duration">Nov 2010 - Sep 2012 · 1 yr 11 mos</div>
                     </div>
-                    <p class="exp-description">Supervised operations team and managed customer service initiatives at one of the world's largest banking institutions. Developed early leadership skills and operational expertise.</p>
+                    <p class="exp-description">Supervised operations teams and managed customer service initiatives at a major banking institution. Developed early leadership skills and operational expertise.</p>
                     <div class="exp-skills">
                         <span class="skill-tag">Team Leadership</span>
                         <span class="skill-tag">Operations</span>
@@ -1193,7 +1472,7 @@
             <div class="contact-content">
                 <div class="section-label">Let's Connect</div>
                 <h2 class="section-title">Get in Touch</h2>
-                <p class="section-description">Interested in discussing financial services, regulatory compliance, or business operations? I'm always open to connecting with industry professionals and exploring new opportunities.</p>
+                <p class="section-description">Interested in discussing financial services, regulatory compliance, or business operations? I'm open to connecting with industry leaders and exploring opportunities where governance and execution need to move in sync.</p>
                 
                 <div class="contact-links">
                     <a href="https://www.linkedin.com/in/kameron-catron-mitchell" target="_blank" class="contact-link">
@@ -1208,6 +1487,16 @@
                         </svg>
                         Email Me
                     </a>
+                    <a href="mailto:contact@kameronmitchell.com?subject=Resume%20Request" class="contact-link">
+                        <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                        </svg>
+                        Request Resume
+                    </a>
+                </div>
+
+                <div class="availability-card">
+                    <p><strong>Availability:</strong> Open to executive roles in regulatory relations, operations leadership, and risk governance in Charlotte Metro and Greater Philadelphia, with hybrid and travel-friendly flexibility.</p>
                 </div>
             </div>
         </div>
@@ -1219,13 +1508,15 @@
         <p style="margin-top: 0.5rem; font-size: 0.875rem;">Charlotte Metro | Greater Philadelphia</p>
     </footer>
 
+    </main>
+
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+        const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+        smoothScrollLinks.forEach(anchor => {
+            anchor.addEventListener('click', event => {
+                const target = document.querySelector(anchor.getAttribute('href'));
                 if (target) {
+                    event.preventDefault();
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -1234,34 +1525,26 @@
             });
         });
 
-        // Scroll reveal animation
         const reveals = document.querySelectorAll('.reveal');
-        
-        function checkReveal() {
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const revealPoint = 100;
-
-                if (elementTop < windowHeight - revealPoint) {
-                    element.classList.add('active');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
                 }
             });
-        }
+        }, { threshold: 0.15 });
 
-        window.addEventListener('scroll', checkReveal);
-        checkReveal(); // Check on load
+        reveals.forEach(reveal => observer.observe(reveal));
 
-        // Add active state to navigation on scroll
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-links a');
 
-        window.addEventListener('scroll', () => {
+        const updateActiveNav = () => {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
+                const sectionTop = section.offsetTop - 220;
+                if (scrollY >= sectionTop) {
                     current = section.getAttribute('id');
                 }
             });
@@ -1272,7 +1555,10 @@
                     link.style.color = 'var(--coral)';
                 }
             });
-        });
+        };
+
+        window.addEventListener('scroll', () => requestAnimationFrame(updateActiveNav));
+        updateActiveNav();
     </script>
 </body>
 </html>
